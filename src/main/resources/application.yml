@@ -14,7 +14,7 @@ server:
 spring:
   # mysql
   profiles:
-    # »·¾³ local|dev|test|prod
+    # ï¿½ï¿½ï¿½ï¿½ local|dev|test|prod
     active: dev
 datasource:
   type: com.alibaba.druid.pool.DruidDataSource
@@ -23,7 +23,7 @@ datasource:
     url: jdbc:mysql://rm-bp17u530nslrwnk75so.mysql.rds.aliyuncs.com:3306/ztruckcenter?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: user_ztruck
     password: Lunz2017
-    initial-size: 10
+    initial-size: 100
     max-active: 100
     min-idle: 10
     max-wait: 60000
