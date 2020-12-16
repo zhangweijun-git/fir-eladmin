@@ -1,0 +1,50 @@
+
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+    basedir: /data/apps/temp
+  port: 8080
+  servlet:
+    context-path: /api/v1
+  session:
+    timeout: 1800
+spring:
+  # mysql
+  profiles:
+    # »·¾³ local|dev|test|prod
+    active: dev
+datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+  driverClassName: com.mysql.cj.jdbc.Driver
+  druid:
+    url: jdbc:mysql://rm-bp17u530nslrwnk75so.mysql.rds.aliyuncs.com:3306/ztruckcenter?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: user_ztruck
+    password: Lunz2017
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    stat-view-servlet:
+      enabled: true
+      url-pattern: /druid/*
+    #login-username: admin
+    #login-password: admin
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: true
+      wall:
+        config:
+          multi-statement-allow: true
